@@ -1,7 +1,5 @@
 @extends('layouts.master')
 
 @section('content')
-
-<p>hello mini library</p>
-
+/my userindex
 @endsection

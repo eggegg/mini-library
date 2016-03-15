@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
+Route::get('/book/{id}', ['as' => 'book.show' , 'uses' => 'BookController@show']);
+
+Route::get('/my', 'UserController@index');
+Route::get('/add', 'UserController@add');
+Route::post('/add', 'UserController@addsave');
+
+Route::controllers([
+	'auth' => 'Auth\AuthController',
+	'password' => 'Auth\PasswordController',
+]);
+
